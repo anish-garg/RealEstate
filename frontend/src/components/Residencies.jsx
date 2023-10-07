@@ -3,7 +3,7 @@ import data from '../utilities/slider.json'
 const Residencies = () => {
     return (
         <section>
-            <div className='text-3xl text-brightblue font-bold py-14 pl-12'>
+            <div className='text-3xl text-brightblue font-bold pt-14 pl-12 pb-8'>
                 <span>Popular Residencies</span>
             </div>
             <div className='flex'>

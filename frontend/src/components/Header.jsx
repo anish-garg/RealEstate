@@ -45,7 +45,7 @@ const Header = () => {
                         </div>
                     </div>
                     <div className="w-1/4 border-8 border-brightblue rounded-tl-[210px] rounded-tr-[210px] overflow-hidden">
-                        <img src="../../public/hero-image.png" alt="hero-image" />
+                        <img src="./hero-image.png" alt="hero-image" />
                     </div>
                 </div>
             </header>
