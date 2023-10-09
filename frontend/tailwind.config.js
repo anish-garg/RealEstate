@@ -11,7 +11,8 @@ export default {
         "brightblue": "#00ABE4"
       },
       boxShadow: {
-        "custom": "0px 0px 8px 0px"
+        "custom": "0px 0px 8px 0px",
+        "value": "4px 4px 8px 5x"
       }
     },
   },

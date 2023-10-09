@@ -23,21 +23,21 @@ const Header = () => {
                         <div className="flex justify-around space-x-5">
                             <div className="place-content-start">
                                 <span className="text-3xl font-medium">
-                                    <span><CountUp start={8800} end={9000} duration={2} /></span>
+                                    <span><CountUp start={8800} end={9000} duration={4} /></span>
                                     <span className="text-4xl">+</span>
                                 </span><br />
                                 <span className="text-brightblue">Premium Properties</span>
                             </div>
                             <div className="place-content-start">
                                 <span className="text-3xl font-medium">
-                                    <span><CountUp start={3800} end={4000} duration={2} /></span>
+                                    <span><CountUp start={3800} end={4000} duration={4} /></span>
                                     <span className="text-4xl">+</span>
                                 </span><br />
                                 <span className="text-brightblue">Happy Customers</span>
                             </div>
                             <div className="place-content-start">
                                 <span className="text-3xl font-medium">
-                                    <span><CountUp end={50} duration={2} /></span>
+                                    <span><CountUp end={50} duration={4} /></span>
                                     <span className="text-4xl">+</span>
                                 </span><br />
                                 <span className="text-brightblue">Awards Winning</span>
