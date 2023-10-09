@@ -27,7 +27,7 @@ const Value = () => {
                         >
                             {data.map((item, i) => {
                                 return (
-                                    <AccordionItem key={i} uuid={i} className={`bg-white o border-2 rounded-lg mb-4 ${className}`}>
+                                    <AccordionItem key={i} uuid={i} className={`bg-white o border-2 rounded-lg mb-4`}>
                                         <AccordionItemHeading>
                                             <AccordionItemButton className='bg-white p-5'>
                                                 <div className='flex justify-between items-center'>
