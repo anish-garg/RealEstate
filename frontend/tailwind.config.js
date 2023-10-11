@@ -8,11 +8,12 @@ export default {
     extend: {
       colors: {
         "lightblue": "#E9F1FA",
-        "brightblue": "#00ABE4"
+        "brightblue": "#00ABE4",
+        "color": "#5a73d7"
       },
       boxShadow: {
         "custom": "0px 0px 8px 0px",
-        "value": "4px 4px 8px 5x"
+        "custom1": "0px 5px 20px 0px"
       }
     },
   },

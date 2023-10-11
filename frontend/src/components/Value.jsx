@@ -13,13 +13,31 @@ import { useState } from 'react';
 
 const Value = () => {
     // const [open, setOpen] = useState(null);
-    const [expanded, setExpanded] = useState(false)
+    // const [expandedAcc, setExpanded] = useState(false)
     // const expand = "shadow-xl shadow-brightblue";
     // const collapsed = ""
-    const handleChange = () => {
-        setExpanded(!expanded)
-    }
+    // const handleChange = () => {
+    //     setExpanded(!expanded)
+    // }
     // console.log(expanded);
+    const [customClasses, setCustomClasses] = useState(Array(3).fill(''));
+
+    // Function to add a custom class to a specific element
+    const addCustomClass = (index) => {
+        // Create a copy of the current state array
+        const updatedClasses = [...customClasses];
+        // Update the class at the specified index
+        if (
+            updatedClasses[index] !==
+            'bg-white border-2 rounded-lg mb-4 shadow-custom1 shadow-blue-500'
+        )
+            updatedClasses[index] =
+                'bg-white border-2 rounded-lg mb-4 shadow-custom1 shadow-blue-500'
+        // Update the state with the modified array
+        else updatedClasses[index] = 'bg-white border-2 rounded-lg mb-4'
+        setCustomClasses(updatedClasses)
+        // console.log(customClasses)
+    };
     return (
         <section>
             <div className='flex items-center mt-16 justify-around'>
@@ -35,28 +53,38 @@ const Value = () => {
                             allowMultipleExpanded={false}
                             preExpanded={[]}
                             allowZeroExpanded
+
                         >
                             {data.map((item, i) => {
+
                                 return (
-                                    <AccordionItem key={i} uuid={i} className={`bg-white border-2 rounded-lg mb-4 ${expanded ? "shadow-xl shadow-brightblue" : ""}`}>
+                                    <AccordionItem
+                                        onClick={() => addCustomClass(i)}
+                                        key={i}
+                                        uuid={i}
+                                        className={`${customClasses[i]}`}
+                                    >
                                         <AccordionItemHeading>
-                                            <AccordionItemButton onClick={() => handleChange()} className='bg-white p-5'>
+                                            <AccordionItemButton className="bg-white p-5">
                                                 {/* <AccordionItemState>
-                                                    {({ expanded }) => console.log(expanded)}
+                                                    {({expanded}) => {
+                                                        if(expanded) addCustomClass(i);
+                                                    }}
                                                 </AccordionItemState> */}
-                                                <div className='flex justify-between items-center'>
-                                                    <div className='bg-lightblue p-2 rounded-md text-brightblue'>
+                                                <div className="flex justify-between items-center">
+                                                    <div className="bg-lightblue p-2 rounded-md text-brightblue">
                                                         {item.icon}
                                                     </div>
-                                                    <span className='text-xl text-brightblue font-semibold'>{item.heading}</span>
-                                                    <div className='bg-lightblue p-2 rounded-md text-brightblue'>
+                                                    <span className="text-xl text-brightblue font-semibold">
+                                                        {item.heading}
+                                                    </span>
+                                                    <div className="bg-lightblue p-2 rounded-md text-brightblue">
                                                         <MdArrowDropDown />
                                                     </div>
                                                 </div>
                                             </AccordionItemButton>
                                         </AccordionItemHeading>
                                         <AccordionItemPanel>
-
                                             <p>{item.detail}</p>
                                         </AccordionItemPanel>
                                     </AccordionItem>

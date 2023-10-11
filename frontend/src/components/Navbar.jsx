@@ -3,7 +3,7 @@ const Navbar = () => {
         <nav>
             <div className="flex justify-between items-center py-5 px-10 bg-lightblue text-brightblue">
                 {/* <img src="" alt="logo" /> */}
-                <div className="ml-8 text-2xl">
+                <div className="ml-8 text-2xl font-bold">
                     Vintage Realty
                 </div>
                 <div className="flex gap-12 mr-4">
