@@ -7,10 +7,10 @@ const Navbar = () => {
                     Vintage Realty
                 </div>
                 <div className="flex gap-12 mr-4">
-                    <a href="">Residencies</a>
-                    <a href="">Our value</a>
-                    <a href="">Contact Us</a>
-                    <a href="">Get Started</a>
+                    <a href="#residencies">Residencies</a>
+                    <a href="#value">Our value</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#getstarted">Get Started</a>
                     <button className="bg-brightblue rounded-md transition-all ease-in  hover:scale-125 duration-300 text-white">
                         <a href="" className="px-6 text-xl">Contact</a>
                     </button>

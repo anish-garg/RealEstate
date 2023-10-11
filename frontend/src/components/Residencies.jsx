@@ -3,7 +3,7 @@ import data from '../utilities/slider.json'
 const Residencies = () => {
 
     return (
-        <section>
+        <section id='residencies'>
             <div className='text-3xl text-brightblue font-bold pt-14 pl-10 pb-6'>
                 <span>Popular Residencies</span>
             </div>

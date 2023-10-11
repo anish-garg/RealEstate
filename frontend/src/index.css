@@ -8,6 +8,10 @@
   font-family: 'Rubik', sans-serif;
 }
 
-.expanded{
+.expanded {
   box-shadow: 3px 3px 10px 10px blue;
+}
+
+html {
+  scroll-behavior: smooth;
 }

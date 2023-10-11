@@ -5,7 +5,7 @@ import { BsPersonVideo3 } from 'react-icons/bs'
 
 const Contact = () => {
     return (
-        <section>
+        <section id='contact'>
             <div className='flex items-center mt-16 justify-around'>
                 <div className="w-[480px] h-[560px] border-8 border-brightblue rounded-tl-[245px] rounded-tr-[245px] overflow-hidden">
                     <img src="./contact.jpg" alt="contact" className="w-full h-full object-fill" />

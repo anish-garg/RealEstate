@@ -39,7 +39,7 @@ const Value = () => {
         // console.log(customClasses)
     };
     return (
-        <section>
+        <section id='value'>
             <div className='flex items-center mt-16 justify-around'>
                 <div>
                     <div className='flex flex-col mb-12 gap-3'>

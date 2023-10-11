@@ -1,6 +1,6 @@
 const GetStarted = () => {
     return (
-        <section>
+        <section id="getstarted">
             <div className="flex justify-center mt-12">
                 <div className="bg-blue-500 text-white w-[80rem] h-[14rem] border-8 border-blue-600 rounded-2xl flex justify-center items-center">
                     <div className="flex flex-col items-center gap-6">
