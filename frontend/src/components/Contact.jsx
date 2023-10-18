@@ -19,7 +19,7 @@ const Contact = () => {
 
                     <div className='flex flex-col gap-12'>
                         <div className='flex gap-12'>
-                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-500'>
+                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-200'>
                                 <div className='flex gap-8 items-center'>
                                     <div className='bg-lightblue h-fit p-2 rounded-md text-brightblue'><MdCall size={25} /></div>
                                     <div className='flex flex-col'>
@@ -32,7 +32,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-500'>
+                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-200'>
                                 <div className='flex gap-8 items-center'>
                                     <div className='bg-lightblue h-fit p-2 rounded-md text-brightblue'><BsFillChatDotsFill size={25} /></div>
                                     <div className='flex flex-col'>
@@ -47,7 +47,7 @@ const Contact = () => {
                         </div>
 
                         <div className='flex gap-12'>
-                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-500'>
+                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-200'>
                                 <div className='flex gap-8 items-center'>
                                     <div className='bg-lightblue h-fit p-2 rounded-md text-brightblue'><BsPersonVideo3 size={25} /></div>
                                     <div className='flex flex-col'>
@@ -60,7 +60,7 @@ const Contact = () => {
                                 </div>
                             </div>
 
-                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-500'>
+                            <div className='border-2 w-fit flex flex-col justify-start gap-4 p-4 rounded-md transition-all ease-in duration-500 hover:scale-110 hover:shadow-custom1 hover:shadow-blue-200'>
                                 <div className='flex gap-8 items-center'>
                                     <div className='bg-lightblue h-fit p-2 rounded-md text-brightblue'><BsChatTextFill size={25} /></div>
                                     <div className='flex flex-col'>

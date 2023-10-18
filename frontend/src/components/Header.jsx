@@ -22,9 +22,9 @@ const Header = () => {
                             Find a variety of properties that suit you very easilty <br />
                             Forget all difficulties in finding a residence for you
                         </div>
-                        <div className="bg-white flex justify-between py-3 px-3  items-center rounded-lg shadow-custom1 shadow-brightblue ">
+                        <div className="bg-white flex justify-between py-3 px-3  items-center rounded-lg shadow-custom1 shadow-blue-300 ">
                             <FaSearchLocation color="#00ABE4" size={23} />
-                            <input type="text" className="outline-none border-none" />
+                            <input type="text" className="outline-none border-none text-sm" placeholder="Search by title/city/country" />
                             <button className="bg-brightblue rounded-md px-4 transition-all ease-in  hover:scale-125 duration-300 text-white h-8">Search</button>
                         </div>
                         <div className="flex justify-around space-x-5">

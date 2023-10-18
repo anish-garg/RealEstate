@@ -1,6 +1,27 @@
-import data from '../utilities/slider.json'
+// import data from '../utilities/slider.json'
+import PropertyCards from './PropertyCards'
+import useProperties from '../hooks/useProperties';
+import { CircleLoader } from 'react-spinners';
 
 const Residencies = () => {
+    const { data, isError, isLoading } = useProperties();
+    // console.log(data);
+    if (isError) {
+        return (
+            <div>
+                <span>Error while fetching the data</span>
+            </div>
+        )
+    }
+
+    if (isLoading) {
+        return (
+            <div className='flex h-screen w-screen justify-center items-center'>
+                <CircleLoader color="#00ABE4"
+                />
+            </div>
+        )
+    }
 
     return (
         <section id='residencies'>
@@ -8,16 +29,8 @@ const Residencies = () => {
                 <span>Popular Residencies</span>
             </div>
             <div className='flex justify-evenly'>
-                {data.map((card, index) => (
-                    <div key={index}>
-                        <div className='bg-white rounded-xl flex flex-col w-72 cursor-pointer transition-all ease-in hover:scale-105 duration-200 hover:bg-lightblue p-5'>
-                            <img src={card.image} alt="residency" />
-                            <span className='text-brightblue text-xl font-semibold py-3
-                            '>${card.price}</span>
-                            <span className='text-blue-950 text-2xl font-bold pb-2'>{card.name}</span>
-                            <span className='text-xs'>{card.detail}</span>
-                        </div>
-                    </div>
+                {data.slice(0, 4).map((card, index) => (
+                    <PropertyCards card={card} key={index} />
                 ))}
             </div >
         </section >
