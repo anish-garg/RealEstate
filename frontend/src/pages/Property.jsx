@@ -46,13 +46,13 @@ const Property = () => {
                 <div className='flex justify-center gap-5'>
                     <span className='flex gap-2'>
                         <MdOutlineBedroomChild color='#172554' size={20} />
-                        {data.facilities.bedrooms} bedrooms
+                        {data.facilities.bedrooms} Bedrooms
                     </span>
                     <span className='flex gap-2'>
-                        <FaShower color='#172554' size={20} /> {data.facilities.bathrooms} bathrooms
+                        <FaShower color='#172554' size={20} /> {data.facilities.bathrooms} Bathrooms
                     </span>
                     <span className='flex gap-2'>
-                        <AiFillCar color='#172554' size={20} />{data.facilities.parking} parking
+                        <AiFillCar color='#172554' size={20} />{data.facilities.parking} Parking
                     </span>
                 </div>
                 <div className='flex flex-col items-center justify-center text-lg gap-3'>
