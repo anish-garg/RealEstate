@@ -1,10 +1,17 @@
-import { useQuery } from 'react-query'
+/* eslint-disable no-unused-vars */
+import { useMutation, useQuery } from 'react-query'
 import { useLocation } from 'react-router-dom'
-import { getProperty } from '../utilities/api';
+import { getProperty, cancelBooking } from '../utilities/api';
 import { CircleLoader } from 'react-spinners';
 import { FaShower } from 'react-icons/fa'
 import { MdOutlineBedroomChild, MdLocationOn } from 'react-icons/md'
 import { AiFillCar } from 'react-icons/ai'
+import { useContext, useState } from 'react';
+import useAuthCheck from '../hooks/useAuthCheck';
+import BookingModal from '../components/BookingModal';
+import { useAuth0 } from '@auth0/auth0-react';
+import UserDetailsContext from '../../context/UserDetailsContext';
+import { toast } from 'react-toastify';
 
 const Property = () => {
     const { pathname } = useLocation()
@@ -12,19 +19,35 @@ const Property = () => {
     const id = pathname.split("/").splice(-1)[0];
     // console.log(id);
     const { data, isError, isLoading } = useQuery(["resd", id], () => getProperty(id));
-    if (isError) {
-        return (
-            <div>
-                <span>Error while fetching the property</span>
-            </div>
-        )
-    }
+
+    const [modalOpened, setModalOpened] = useState(false)
+    const { validateLogin } = useAuthCheck();
+    const { user } = useAuth0()
+    const { userDetails: { bookings }, setUserDetails } = useContext(UserDetailsContext);
+
+    // const { mutate: cancelBooking } = useMutation({
+    //     mutationFn: () => cancelBooking(id, user?.email),
+    //     onSuccess: () => {
+    //         toast.success("Your booking is canceled");
+    //         setUserDetails((prev) => ({
+    //             ...prev, bookings: prev.bookings.filter((booking) => booking?.id !== id)
+    //         }))
+    //     }
+    // })
 
     if (isLoading) {
         return (
             <div className='flex h-screen w-screen justify-center items-center'>
                 <CircleLoader color="#00ABE4"
                 />
+            </div>
+        )
+    }
+
+    if (isError) {
+        return (
+            <div>
+                <span>Error while fetching the property</span>
             </div>
         )
     }
@@ -63,12 +86,26 @@ const Property = () => {
                     </span>
                 </div>
                 <div className='flex justify-evenly'>
-                    <button className="bg-brightblue rounded-md px-64 transition-all ease-in hover:scale-110 duration-300 text-white h-8">
+                    {/* {bookings?.map((booking) => booking.id).includes(id) ?
+                        (<button className="bg-brightblue rounded-md px-52 transition-all ease-in hover:scale-110 duration-300 text-white h-8">
+                            Cancel the Visit
+                        </button>) : ()} */}
+                    <button className="bg-brightblue rounded-md px-64 transition-all ease-in hover:scale-110 duration-300 text-white h-8" onClick={
+                        () => {
+                            validateLogin() && setModalOpened(true);
+                        }}>
                         Book a Visit
                     </button>
+
+                    <BookingModal
+                        opened={modalOpened}
+                        setOpened={setModalOpened}
+                        propertyID={id}
+                        email={user?.email}
+                    />
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 

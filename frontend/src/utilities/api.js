@@ -1,9 +1,9 @@
 import axios from "axios";
-// import dayjs from "dayjs";
+import dayjs from "dayjs";
 import { toast } from "react-toastify";
 
 export const api = axios.create({
-  baseURL: "http://localhost:8000/api" || "http://real-estate-nnhhyim6e-anish-garg.vercel.app/api",
+  baseURL: "http://localhost:8000/api",
 });
 
 export const getAllProperties = async () => {
@@ -41,6 +41,30 @@ export const getProperty = async (id) => {
 export const createUser = async (email) => {
   try {
     await api.post("/user/register", { email: email });
+  } catch (error) {
+    toast.error("Something went wrong.Please try again");
+    throw error;
+  }
+}
+
+export const bookVisit = async (date, propertyID, email) => {
+  try {
+    await api.post(`/user/bookVisit/${propertyID}`, {
+      email: email,
+      id: propertyID,
+      date: dayjs(date).format("DD/MM/YYYY")
+    });
+  } catch (error) {
+    toast.error("Something went wrong.Please try again");
+    throw error;
+  }
+}
+
+export const cancelBooking = async (id, email) => {
+  try {
+    await api.post(`/user/removebookings/${id}`, {
+      email,
+    });
   } catch (error) {
     toast.error("Something went wrong.Please try again");
     throw error;
