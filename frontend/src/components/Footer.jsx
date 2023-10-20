@@ -1,8 +1,9 @@
 const Footer = () => {
     return (
         <footer id="footer">
-            <div className="flex justify-between h-56 items-center">
-                <div className="flex flex-col flex-wrap gap-3 items-center justify-end">
+            <hr className="w-[96%] mt-28 h-2 bg-gradient-to-r from-brightblue ... m-auto" />
+            <div className="flex justify-between h-48 items-center">
+                <div className="flex flex-col flex-wrap gap-3 items-center justify-end pb-8">
                     <div className="h-10 w-10 bg-gradient-to-r from-yellow-500 ... rounded-full relative left-[7rem] top-[2.25rem] -z-10"></div>
                     <span className="text-3xl text-brightblue font-bold">
                         Vintage Realty

@@ -12,6 +12,7 @@ import BookingModal from '../components/BookingModal';
 import { useAuth0 } from '@auth0/auth0-react';
 import UserDetailsContext from '../../context/UserDetailsContext';
 import { toast } from 'react-toastify';
+import Heart from '../components/Heart';
 
 const Property = () => {
     const { pathname } = useLocation()
@@ -54,8 +55,11 @@ const Property = () => {
 
     return (
         <div>
-            <div className='flex justify-center'>
+            <div className='flex justify-center relative'>
                 <img src={data.image} alt="house" className='w-full h-[30rem]' />
+                <div className='absolute right-3 top-3'>
+                    <Heart id={id} />
+                </div>
             </div>
             <div className='flex flex-col gap-8'>
                 <div className='flex justify-evenly mt-10'>

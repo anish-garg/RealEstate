@@ -70,3 +70,30 @@ export const cancelBooking = async (id, email) => {
     throw error;
   }
 }
+
+export const toFav = async (id, email) => {
+  try {
+    await api.post(`/user/addtofav/${id}`, {
+      email,
+    });
+  } catch (error) {
+    toast.error("Something went wrong.Please try again");
+    throw error;
+  }
+}
+
+export const getAllFav = async (email) => {
+  try {
+    const res = await api.post(
+      `/user/allfavresidencies`,
+      {
+        email,
+      },
+    );
+    return res.data["favResidenciesID"]
+
+  } catch (e) {
+    toast.error("Something went wrong while fetching favourites");
+    throw e
+  }
+} 

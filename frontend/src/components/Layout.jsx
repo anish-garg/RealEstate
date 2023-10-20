@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Footer from "./Footer"
 import Navbar from "./Navbar"
 import { Outlet } from 'react-router-dom'
@@ -8,6 +9,7 @@ import { useMutation } from 'react-query'
 import { createUser } from "../utilities/api"
 
 const Layout = () => {
+    // useFavourites()
     const { user, isAuthenticated } = useAuth0();
     const { setUserDetails } = useContext(UserDetailsContext);
 
